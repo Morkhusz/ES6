@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Let</title>
+</head>
+<body>
+
+
+<script>
+    var animal = 'cat'; // global scope
+    console.log('global scope result: ' + animal);
+    {
+        let animal = 'dog'; // block scope
+        console.log('block scope result: ' + animal);
+    }
+    console.log('checking global scope: ' + animal);
+
+    function varTest () {
+        var x = 1;
+        console.log(x); // outputs 1
+        if (true) {
+            var x = 2; // re-assigned to the same variable
+            console.log(x); // outputs 2
+        }
+        console.log(x); // still outputs 2 cause' vars have global scope
+    }
+
+    // varTest();
+
+    function letTest() {
+        let y = 1;
+        console.log(y); // outputs 1
+        if (true) {
+            let y = 2; // create a new let variable and assign the value 2
+            console.log(y); // outputs 2
+            if (true) {
+                console.log(y); // y is not defined cause' let have block scope
+                let y = 3; // create a new let variable and assign the value 3
+                console.log(y); // outputs 3
+            }
+        }
+        console.log(y); // outputs 1 cause' let have block scope
+    }
+
+    letTest();
+
+</script>
+</body>
+</html>
