@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lexical This</title>
+</head>
+<body>
+    <button id="click">Click me!</button>
+<script>
+    const btn = document.getElementById('click');
+
+    btn.addEventListener('click', function() {
+        // here 'this' has the caller scope, in other words, the 'btn var'
+        // that are listening to clicks
+        // console.log(this);
+    });
+
+    btn.addEventListener('click', () => {
+        // in arrow functions 'this' has the scope from where it is placed,
+        // in this case, the window
+        // console.log(this);
+    });
+
+    const sandwich = {
+        bread: 'white',
+        cheese: 'cheddar',
+
+        prepare: function () {
+            return `I want my sandwich with ${this.bread} bread and ${this.cheese} cheese`;
+        },
+
+        make: function () {
+            // in this case 'function()' has the scope of the caller,
+            // in other words, 'this' refers to the window
+            // if we change to () => {} 'this' has de object scope
+            window.setTimeout(() => {
+                console.log(this.prepare())
+            }, 500);
+        }
+    };
+
+    btn.addEventListener('click', () => sandwich.make());
+
+</script>
+</body>
+</html>
