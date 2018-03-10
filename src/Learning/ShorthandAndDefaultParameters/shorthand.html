@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ShortHand</title>
+</head>
+<body>
+    
+
+<script>
+    const name = 'Morkhusz';
+    const lastName = 'Mooz';
+    const ocupation = 'Programmer';
+
+    const person = {
+        name: name,
+        lastName: lastName,
+        ocupation: ocupation
+    }
+
+    console.log(person);
+
+    const shorthandedPerson = {
+        // using shorthand attribuition, if the property has the same name
+        // as the value declared before, we don't have to specify it
+        name,
+        lastName,
+        ocupation,
+        
+        // function shorthand let us omit the common declaration such as
+        // greet: function () {} as shown below
+        greet() {
+            return `Hello sir ${lastName}, ${name}!`;
+        }
+    }
+
+    console.log(shorthandedPerson);
+    console.log(shorthandedPerson.greet());
+</script>
+</body>
+</html>

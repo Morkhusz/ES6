@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array pt 3</title>
+</head>
+<body>
+    <h1>Array.fill()</h1>
+</body>
+<script>
+    const arr = new Array(50);
+    arr.fill('lol');
+
+    console.log(arr);
+
+    arr.fill('lol', 3, 6);
+
+    console.log(arr, arr.length);
+
+    const newArr = [1,2,3,4,5,6];
+    
+    newArr.fill('foo', 3, 5);
+
+    console.log(newArr);
+</script>
+</html>
