@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destructuring Arrays</title>
+</head>
+<body>
+    <script>
+        const arr = ['Morkhusz', 'Mooz', 25, 'São Paulo'];
+        // using destructuring on arrays is just simples as on objects
+        // the only difference are: we use [  ] instead of { }
+        // the only possible problem is that we are naming vars based on the array index (0, 1, 2...)
+        // so be carefull using this on arrays that you don't know exactly the array size or something
+        const [ name, surname, age, city ] = arr;
+
+        console.log(name, surname, age, city);
+    </script>
+</body>
+</html>
