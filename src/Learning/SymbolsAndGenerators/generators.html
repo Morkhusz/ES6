@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generators</title>
+</head>
+<body>
+    <script>
+        function* genName() {
+            console.log('First name: ');
+            yield 'Morkhusz'; // yield is kinda 'return' but is possible to reach thing bellow it, unlikely 'return' statement
+            console.log('Second name: ');
+            yield 'Jose';
+            console.log('Third name: ');
+            yield 'Silva';
+        }
+
+        const names = genName();
+
+        console.log(names); // it says that 'names' is a Generator and have the Generator.prototype
+
+        console.log(names.next()); // prints only the current iteration result and only once, if we call it again will only print the second result
+        console.log(names.next());
+    </script>
+</body>
+</html>
