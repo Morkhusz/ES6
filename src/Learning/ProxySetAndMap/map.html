@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map e Weak Map</title>
+</head>
+<body>
+    <script>
+        let m = new Map();
+
+        m.set('Willian', 26);
+        m.set('Jonas', 22);
+        m.set('Godoy', 30);
+
+        // now we can use all values and methods like Set, the difference is that Map doesn't show keys, only values
+
+        // WeakMap
+
+        let obj = {
+            name: 'Willian',
+            age: 26
+        };
+        
+        let obj2 = {
+            name: 'Jonas',
+            age: 22
+        };
+
+        let wm = new WeakMap();
+
+        vm.set(obj1, 'Info do Willian');
+        vm.set(obj2, 'Info do Jonas');
+
+        // like weakSet, weakMap is not a interable, so we can use for of or .next()
+    </script>
+</body>
+</html>

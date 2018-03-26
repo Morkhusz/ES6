@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Set</title>
+</head>
+<body>
+    <script>
+        let mySet = new Set(['Jose', 'Joao', 'Maria']);
+        // Set stores unique values and have its iterator wich means that we cannot add duplicated values and we can iterate over it using .next or e.g: for (item of items)
+
+        // a Set has some nice default methods like delete(), add() and instead of using lenght we can use .size property to retrieve its size
+        console.log(mySet.size);
+        mySet.add('Marcela'); // add the value to mySet
+        mySet.add('Marcela'); // does nothing cause 'Marcela' already existis
+        mySet.delete('Jose');
+
+        let iterator = mySet.values(); // .values() is the implementation of a iterator of the defined Set
+
+        console.log(iterator.next());
+
+        for (name of iterator) {
+            console.log(name);
+        }
+
+    </script>
+</body>
+</html>

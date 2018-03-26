@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proxy</title>
+</head>
+<body>
+    <script>
+        // with proxy we can modify methods from the prototype or even include extra actions on object methods like below
+
+        let object = {
+            name: 'Jose',
+            age: '25'
+        };
+        
+        let proxy = new Proxy(object, {
+            get(target, name) {
+                // we are overwriting the getter of the object, as we call console.log if we do not return the name the getter will not retun as usual
+                console.log('Calling the object getter...');
+                // returning the name like the normal getter
+                return target[name];
+            },
+
+            set(target, prop, value) {
+                // when calling proxy.name or proxy.age = 'value', the console.log will be shown
+                // but if we call the getter, the value still untouched
+                console.log(`somebody is trying to change the ${prop} property!`);
+                // to change the property, we have to set it manually here
+                target[prop] = value;
+            }
+        })
+
+    </script>
+</body>
+</html>
